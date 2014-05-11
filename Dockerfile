@@ -13,7 +13,9 @@ RUN yum -y update; yum clean all
 RUN rpm -i http://mir01.syntis.net/epel/6/i386/epel-release-6-8.noarch.rpm
 
 ## Tweak configuration ##
-RUN echo "SELINUX=disabled" > /etc/selinux/config
+#RUN echo "SELINUX=disabled" > /etc/selinux/config
+
+RUN yum install -y postfix; yum clean all
 
 # Fix centos defaults
 # Cron: http://stackoverflow.com/a/21928878/1528413
