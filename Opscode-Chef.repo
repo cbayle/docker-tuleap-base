@@ -1,0 +1,6 @@
+[opscode-chef]
+name=Opcode Chef full-stack installers for $releasever - $basearch
+baseurl=http://yum.opscode.com/el/$releasever/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://apt.opscode.com/packages@opscode.com.gpg.key
