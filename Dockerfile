@@ -7,16 +7,14 @@ FROM cbayle/centos6
 MAINTAINER Christian Bayle, cbayle@gmail.com
 
 ## Install dependencies ##
+## Install EPEL dependencies ##
 RUN yum install -y \
    epel-release \
    postfix \
    cronie \
    openssh-server \
    curl \
-   ; yum clean all
-
-## Install EPEL dependencies ##
-RUN yum install -y \
+   ; yum install -y \
    python-pip \
    ; yum clean all
 
@@ -33,7 +31,8 @@ RUN rpm --import http://apt.opscode.com/packages@opscode.com.gpg.key ; \
 #   ; yum clean all
 
 # Install supervisord
-RUN pip install pip --upgrade ; pip install supervisor
+#RUN pip install pip --upgrade ; pip install supervisor
+RUN pip install supervisor
 
 ## Tweak configuration ##
 #RUN echo "SELINUX=disabled" > /etc/selinux/config
