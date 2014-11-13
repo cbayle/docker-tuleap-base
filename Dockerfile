@@ -1,7 +1,7 @@
 ## Base container to run tuleap flavors on top ##
 
 ## Use the official docker centos distribution ##
-FROM cbayle/centos6
+FROM centos:centos6
 
 ## Get some karma ##
 MAINTAINER Christian Bayle, cbayle@gmail.com
