@@ -18,6 +18,10 @@ RUN yum install -y \
    python-pip \
    ; yum clean all
 
+# Install rpmforge and disable by default
+RUN rpm -i http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.$(uname -m).rpm ; \
+	sed -i '/enabled = 1/cenabled = 0' /etc/yum.repos.d/rpmforge.repo
+
 # Install Chef
 # Ugly method, for certificate see: https://tickets.opscode.com/browse/CHEF-2803
 RUN rpm --import http://apt.opscode.com/packages@opscode.com.gpg.key ; \
